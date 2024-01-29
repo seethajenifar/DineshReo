@@ -1,73 +1,97 @@
 package org.sample;
+import java.io.IOException;
+import java.util.Date;
+
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.sample1.NewBaseclass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+import base1.baseclasslogin;
 import samlegit2.NewLogin;
-public class New extends NewBaseclass{
+public class New extends db{
 public static void main(String[] args) {
-
-	browserLaunch("chrome");
-	urlLaunch("https://www.adactinhotelapp.com/");
-	implicitlywait(20);
+}
+	@BeforeClass
+	public void beforeclass() {
+	edgeLaunch();
+	 urlLaunch("http://www.adactinhotelapp.com/");
+	impWait(20);
+	}
+	 @BeforeMethod
+	public void beforemethod() {
+	Date d = new Date();
+	System.out.println("start time"+d);
+	}
+	@AfterMethod
+	public void aftermethod() {
+	Date d = new Date();
+	System.out.println("end time"+d);
+	}
+	@Test
+	public void test() throws IOException {
 	NewLogin l = new NewLogin();
 	sendkeys(l.gettxtusername(),"seethajenifar");
 	sendkeys(l.gettxtpassword(),"Chennai23");
 	click(l.getbtnlogin());
-//	click(l.getlocation());
-//	SelectByIndex(l.getlocation(),1);
-//	click(l.gethotels());
-//	SelectByIndex(l.gethotels(),1);
-//	click(l.getroomtype());
-//	SelectByIndex(l.getroomtype(),1);
-//	click(l.getNoofrooms());
-//	SelectByIndex(l.getNoofrooms(),1);
-//	sendkeys(l.getcheckindate(),"08/08/2023");
-//	sendkeys(l.getcheckoutdate(),"09/08/2023");
-//	click(l.getadultsperroom());
-//	SelectByIndex(l.getadultsperroom(),1);
-//	click(l.getchildrensperroom());
-//	SelectByIndex(l.getchildrensperroom(),1);
-//	click(l.getsearch());
-//	click(l.getradioclick());
-////	click(l.getbtnlogin());
-//	click(l.getbtncontinue());
-//	sendkeys(l.getfirstname(),"seetha");
-//	sendkeys(l.getlastname(),"h");
-//	sendkeys(l.getbillingaddress(),"chrompet");
-//	sendkeys(l.getcardno(),"1234567898765432");
-//	click(l.getcrtype());
-//	SelectByIndex(l.getcrtype(),3);
-//	click(l.expiry());
-//	SelectByIndex(l.expiry(),8);
-//	click(l.expiry());
-//	click(l.expiryyear());
-//	SelectByIndex(l.expiryyear(),12);
-//	click(l.expiryyear());
-//	sendkeys(l.cvv(),"123");
-//	click(l.clickbooknow());
-//	System.out.println(getAttribute(l.getOrdernumber()));
-//	//
+	}
+	
+	@Test
+	public void test2()throws IOException {
+		NewLogin l = new NewLogin();
+	click(l.getlocation());
+	SelectByIndex(l.getlocation(),1);
+	click(l.gethotels());
+	SelectByIndex(l.gethotels(),1);
+	click(l.getroomtype());
+	SelectByIndex(l.getroomtype(),1);
+	click(l.getNoofrooms());
+	SelectByIndex(l.getNoofrooms(),1);
+	sendkeys(l.getcheckindate(),"08/08/2023");
+	sendkeys(l.getcheckoutdate(),"09/08/2023");
+	click(l.getadultsperroom());
+	SelectByIndex(l.getadultsperroom(),1);
+	click(l.getchildrensperroom());
+	SelectByIndex(l.getchildrensperroom(),1);
+	click(l.getsearch());
+	click(l.getradioclick());
+	click(l.getbtnlogin());
+	click(l.getbtncontinue());
+	sendkeys(l.getfirstname(),"seetha");
+	sendkeys(l.getlastname(),"h");
+	sendkeys(l.getbillingaddress(),"chrompet");
+	sendkeys(l.getcardno(),"1234567898765432");
+	click(l.getcrtype());
+	SelectByIndex(l.getcrtype(),3);
+	click(l.expiry());
+	SelectByIndex(l.expiry(),8);
+	click(l.expiry());
+	click(l.expiryyear());
+	SelectByIndex(l.expiryyear(),12);
+	click(l.expiryyear());
+	sendkeys(l.cvv(),"123");
+	click(l.clickbooknow());
+	System.out.println(getAtt(l.getOrdernumber()));
+	
 	click(l.BookedItinerary());
+	click(l.radiobtn());
 	click(l.Orderid());
 	click(l.cancelbox());
+	
 	//alert
-	click(l.getclkok());
-	Alert a = driver.switchTo().alert();
-	a.accept();
+Alert a = driver.switchTo().alert();
+a.accept();
+	}
+	private void SelectByIndex(WebElement getlocation, int i) {
+		
+		
+	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		
+	}
 	
 	
 	
@@ -140,4 +164,3 @@ public static void main(String[] args) {
 //	String a = ("ordernumber-ST9GOHR1J2");
 //	System.out.println(a);
 	//quit();
-}}

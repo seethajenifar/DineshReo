@@ -5,18 +5,20 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.sample1.NewBaseclass;
-public class NewLogin extends NewBaseclass{
+
+import base1.baseclasslogin;
+public class NewLogin extends baseclasslogin{
 public void test() {
 NewLogin l = new NewLogin();
 PageFactory.initElements(driver, this);
 }
-@FindBy(id ="email")
+@FindBy(id ="username")
 private WebElement txtusername;
 
-@FindBy(id ="pass")
+@FindBy(id ="password")
 private WebElement txtpassword;
 
-@FindBy(name ="login")
+@FindBy(id ="login")
 private WebElement btnlogin;
 
 public WebElement gettxtusername() {
@@ -131,15 +133,15 @@ return btnlogin;
 	@FindBy(id ="order_no")
 	private WebElement ordernumber;
 
-	public WebElement getTxtusername() {
-		return txtusername;
-	}
-	public WebElement getTxtpassword() {
-		return txtpassword;
-	}
-	public WebElement getBtnlogin() {
-		return btnlogin;
-	}
+//	public WebElement getTxtusername() {
+//		return txtusername;
+//	}
+//	public WebElement getTxtpassword() {
+//		return txtpassword;
+//	}
+//	public WebElement getBtnlogin() {
+//		return btnlogin;
+//	}
 	public WebElement getLocation() {
 		return location;
 	}
@@ -200,11 +202,16 @@ return btnlogin;
 	public WebElement getOrdernumber() {
 		return ordernumber;
 	}
-//	@FindBy (xpath=("//a[contains(@href='Booked Itinerary')]");
-//	private WebElement clickBookedItinerary;
-//	public WebElement BookedItinerary() {
-//	return clickBookedItinerary;
-//	}
+	@FindBy (xpath="//a[contains(text(),'Booked Itinerary')]")
+	private WebElement clickBookedItinerary;
+    public WebElement BookedItinerary() {
+	return clickBookedItinerary;
+	}
+    @FindBy(id ="radiobutton_0")
+    private WebElement radiobtn;
+    public WebElement radiobtn() {
+    return radiobtn;
+    }
 	@FindBy (className ="ids[]")
 	private WebElement orderid;
 	public WebElement Orderid() {
@@ -215,8 +222,9 @@ return btnlogin;
 	public WebElement cancelbox() {
 	return cancelbox;
 	}
-	public WebElement clkok() {
-	return clkok();
-	}}
+	public WebElement getclkok() {
+	return getclkok();
+	}
+	}
 
 	//driver.quit();
